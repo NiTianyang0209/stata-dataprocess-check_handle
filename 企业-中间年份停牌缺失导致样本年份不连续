@@ -7,7 +7,7 @@ by stkid: gen gap = year - year[_n-1] if _n>1&yearlistyear
 list stkid year if gap>1
 
 xtset stkid year
-tsfill 
+tsfill //补全所有年份序列
 
 * 1. 标记"该年是否整条缺失"
 gen all_missing = missing(estbyear) & missing(listyear) 
@@ -28,4 +28,5 @@ label var n_gap 出现中断的年份数
 // gen has_gap2 = (n_gap >= 2)
 
 drop if all_missing==1 
-drop all_missing
+drop all_missing has_all_missing 
+
