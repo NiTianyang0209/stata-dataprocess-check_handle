@@ -1,7 +1,11 @@
 * 查看数据情况 
 sum _all
 sum _all, d  // 汇报详细数据特征
-codebook _all  // 可选codebook varlist
+codebook _all  // 可选codebook varlist 
+
+nmissing  // nmissing [varlist] [if exp] [in range] [, min(#) obs piasm trim ]
+
+mdesc, all  // mdesc varlist [if] [in] [, abbreviate(#) any all none ]
 
 * 删除重复值
 duplicates report var  // 显示重复值。根据所有列属性，所有的值都是一样的
