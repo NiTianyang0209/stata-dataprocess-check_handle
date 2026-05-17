@@ -3,7 +3,7 @@ xtset stkid year
 
 ***  查看后发现，出现因为中途停牌、企业中间年份样本缺失的情况
 sort stkid year
-by stkid: gen gap = year - year[_n-1] if _n>1&yearlistyear
+by stkid: gen gap = year - year[_n-1] if _n>1&year>=listyear
 list stkid year if gap>1
 
 xtset stkid year
